@@ -11,6 +11,16 @@
         rel="stylesheet">
     <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        #section{
+            display:none; 
+            color: wheat;
+        }
+        #section h1{
+            text-align: center;
+            font-size: 70px;
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +37,7 @@
     </header>
 
     <!--Booking Section-->
-    <main class="main-content container">
+    <main class="main-content container" id="main-section">
 
         <div class="booking-content">
             <h1>Mega City Bus</h1>
@@ -108,9 +118,13 @@
                     </div>
                 </div>
             </div>
-            <button class="btn-style">Book Now</button>
+            <button class="btn-style" id="btn-submit">Book Now</button>
         </div>
     </main>
+    <section id="section">
+        <h1>Welcome to our bus service</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam ipsum officiis ipsa minima amet dolorem eligendi nulla dolore. Voluptatum possimus ut nesciunt, a autem necessitatibus. Ullam architecto quod quos. Neque saepe maxime sunt nulla expedita esse similique sit inventore vero! Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed alias voluptatem quod fugiat labore nobis corrupti, iusto quia reiciendis nihil excepturi aspernatur animi totam, molestiae, possimus dicta. Quia hic corrupti fugiat maiores quae earum atque cupiditate perspiciatis harum soluta, quod laborum? Eligendi est sequi quidem aliquid dignissimos nostrum nesciunt quod amet quae provident delectus voluptate, officiis inventore possimus eos expedita.</p>
+    </section>
 
     <script>
        document.getElementById('increase').addEventListener('click',function(){
@@ -154,7 +168,15 @@ document.getElementById('vat').innerText='$'+vat;
 var total=subTotal+vat;
 document.getElementById('total').innerText='$'+total;
 }
+document.getElementById('btn-submit').addEventListener('click',function(){
+    console.log("Click submit");
+    const main=document.getElementById('main-section');
+    main.style.display='none';
+    const secondPart=document.getElementById('section');
+    console.log(secondPart);
+    secondPart.style.display='block';
 
+})
 
 
 
